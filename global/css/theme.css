@@ -1,0 +1,35 @@
+/*	BRAND THEME -- UL
+	OVERWRITE SOLUTION PACKAGE WITH APPROPRIATE BRANDING RESOURCE. */
+
+/* NEW HIGHCHARTS 5 STYLE MODE (G360 THEME). ALL OTHER PRODUCTS WILL HAVE THEIR OWN STYLING WITHIN THE THEME.CSS */
+.highcharts-container {}
+.highcharts-background {}
+.highcharts-plot-border, .highcharts-plot-background { }
+.highcharts-label-box { }
+.highcharts-axis-line {}
+.highcharts-grid-line {}
+.highcharts-axis.highcharts-yaxis {}
+
+/* LEGEND HOVER. AFFECTS POINTS AND SERIES */
+g.highcharts-series, .highcharts-point { transition: opacity 250ms; }
+.highcharts-legend-series-active g.highcharts-series:not(.highcharts-series-hover), .highcharts-legend-point-active .highcharts-point:not(.highcharts-point-hover) { opacity: 0.3; }
+
+/* DRILLDOWN MODULE */
+.highcharts-drilldown-data-label text, .highcharts-drilldown-axis-label {fill: #003399; font-weight:normal; text-decoration: underline; }
+
+/* CUSTOM CHART CLASSES 
+**************************************************************************************************** */
+.polar-chart {}
+.polar-chart .highcharts-axis-line {stroke-width:0}
+.polar-chart .highcharts-grid-line {stroke:#ccc;}
+.score-gauge {}
+.score-gauge .highcharts-axis-line {stroke-width:0}
+.score-gauge .highcharts-background {}
+.score-gauge .highcharts-grid-line {stroke:#bbb;stroke-width:.5}
+/* KPI DASHBOARD STYLING */
+.kpi-map {}
+.kpi-map .highcharts-point {stroke: #fff; }
+.kpi-map .highcharts-point-hover {fill-opacity: 0.5;stroke-width: 1px;/*fill:#ffc349 !important UNCOMMENT IF YOU WANT MAP REGION HOVER */} 
+.kpi-map .highcharts-color-0 { fill: #999}  /*DEFAULT MAP COLOR */
+.kpi-map .highcharts-point-select {fill:#8783a0;stroke: #fff;} /* COLOR SELECTED REGION(S) */
+.kpi-chart {}

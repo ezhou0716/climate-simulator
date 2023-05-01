@@ -1,0 +1,238 @@
+/* ========================================================================
+ * bootstrap-switch - v3.0.0
+ * http://www.bootstrap-switch.org
+ * ========================================================================
+ * Copyright 2012-2013 Mattia Larentis
+ *
+ * ========================================================================
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================================
+ */
+
+.bootstrap-switch { display: inline-block; cursor: pointer; border-radius:2px; border: 1px solid; border-color: #cccccc; position: relative; text-align: left; overflow: hidden; line-height: 8px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; vertical-align: middle; min-width: 100px; -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
+.bootstrap-switch.bootstrap-switch-mini { min-width: 72px; }
+.bootstrap-switch.bootstrap-switch-mini > div > span, .bootstrap-switch.bootstrap-switch-mini > div > label { padding-bottom: 4px; padding-top: 4px; font-size: 10px; line-height: 9px; }
+.bootstrap-switch.bootstrap-switch-mini .bootstrap-switch-mini-icons { height: 1.20em; line-height: 9px; vertical-align: text-top; text-align: center; transform: scale(0.6); margin-top: -1px; margin-bottom: -1px; }
+.bootstrap-switch.bootstrap-switch-small { min-width: 80px; }
+.bootstrap-switch.bootstrap-switch-small > div > span, .bootstrap-switch.bootstrap-switch-small > div > label { padding-bottom: 3px; padding-top: 3px; font-size: 12px; line-height: 18px; }
+.bootstrap-switch.bootstrap-switch-large { min-width: 120px; }
+.bootstrap-switch.bootstrap-switch-large > div > span, .bootstrap-switch.bootstrap-switch-large > div > label { padding-bottom: 9px; padding-top: 9px; font-size: 16px; line-height: normal; }
+.bootstrap-switch.bootstrap-switch-animate > div { -webkit-transition: margin-left 0.5s; transition: margin-left 0.5s; }
+.bootstrap-switch.bootstrap-switch-on > div { margin-left: 0%; }
+.bootstrap-switch.bootstrap-switch-on > div > label { border-bottom-right-radius:1px; border-top-right-radius:1px; }
+.bootstrap-switch.bootstrap-switch-off > div { margin-left: -50%; }
+.bootstrap-switch.bootstrap-switch-off > div > label { border-bottom-left-radius:1px; border-top-left-radius:1px; }
+.bootstrap-switch.bootstrap-switch-disabled, .bootstrap-switch.bootstrap-switch-readonly { opacity: 0.5; filter: alpha(opacity=50); cursor: default !important; }
+.bootstrap-switch.bootstrap-switch-disabled > div > span, .bootstrap-switch.bootstrap-switch-readonly > div > span, .bootstrap-switch.bootstrap-switch-disabled > div > label, .bootstrap-switch.bootstrap-switch-readonly > div > label { cursor: default !important; }
+.bootstrap-switch.bootstrap-switch-focused { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6); box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+.bootstrap-switch > div { display: inline-block; width: 150%; top: 0; border-radius:2px; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.bootstrap-switch > div > span, .bootstrap-switch > div > label { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; cursor: pointer; display: inline-block !important; height: 100%; padding-bottom: 4px; padding-top: 4px; font-size: 14px; line-height: 20px; }
+.bootstrap-switch > div > span { text-align: center; z-index: 1; width: 33.333333333%; }
+.bootstrap-switch > div > span.bootstrap-switch-handle-on { color: #f00; border-bottom-left-radius: 1px; border-top-left-radius: 1px; }
+.bootstrap-switch > div > span.bootstrap-switch-handle-off { color: #000; background: #eeeeee; border-bottom-right-radius: 1px; border-top-right-radius: 1px; }
+.bootstrap-switch > div > span.bootstrap-switch-primary { color: #fff; background: #428bca; }
+.bootstrap-switch > div > span.bootstrap-switch-info { color: #fff; background: #5bc0de; }
+.bootstrap-switch > div > span.bootstrap-switch-success { color: #fff; background: #5cb85c; }
+.bootstrap-switch > div > span.bootstrap-switch-warning { background: #f0ad4e; color: #fff; }
+.bootstrap-switch > div > span.bootstrap-switch-danger { color: #fff; background: #d9534f; }
+.bootstrap-switch > div > span.bootstrap-switch-default { color: #000; background: #eeeeee; }
+.bootstrap-switch > div > label { text-align: center; margin-top: -1px; margin-bottom: -1px; z-index: 100; width: 33.333333333%; color: #333333; background: #ffffff; }
+.bootstrap-switch input[type='radio'], .bootstrap-switch input[type='checkbox'] { position: absolute !important; top: 0; left: 0; opacity: 0; filter: alpha(opacity=0); z-index: -1; }
+
+/*!
+ * Jasny Bootstrap v3.1.0 (http://jasny.github.com/bootstrap)
+ * Copyright 2011-2014 Arnold Daniels.
+ * Licensed under Apache-2.0 (https://github.com/jasny/bootstrap/blob/master/LICENSE)
+ */
+
+.nav-tabs-bottom {
+  border-bottom: 0;
+  border-top: 1px solid #dddddd;
+}
+.nav-tabs-bottom > li {
+  margin-bottom: 0;
+  margin-top: -1px;
+}
+.nav-tabs-bottom > li > a {
+  border-radius: 0 0 4px 4px;
+}
+.nav-tabs-bottom > li > a:hover,
+.nav-tabs-bottom > li > a:focus,
+.nav-tabs-bottom > li.active > a,
+.nav-tabs-bottom > li.active > a:hover,
+.nav-tabs-bottom > li.active > a:focus {
+  border: 1px solid #dddddd;
+  border-top-color: transparent;
+}
+.nav-tabs-left {
+  border-bottom: 0;
+  border-right: 1px solid #dddddd;
+}
+.nav-tabs-left > li {
+  margin-bottom: 0;
+  margin-right: -1px;
+  float: none;
+}
+.nav-tabs-left > li > a {
+  border-radius: 4px 0 0 4px;
+  margin-right: 0;
+  margin-bottom: 2px;
+}
+.nav-tabs-left > li > a:hover,
+.nav-tabs-left > li > a:focus,
+.nav-tabs-left > li.active > a,
+.nav-tabs-left > li.active > a:hover,
+.nav-tabs-left > li.active > a:focus {
+  border: 1px solid #dddddd;
+  border-right-color: transparent;
+}
+.row > .nav-tabs-left {
+  padding-right: 0;
+  padding-left: 15px;
+  margin-right: -1px;
+  position: relative;
+  z-index: 1;
+}
+.row > .nav-tabs-left + .tab-content {
+  border-left: 1px solid #dddddd;
+}
+.nav-tabs-right {
+  border-bottom: 0;
+  border-left: 1px solid #dddddd;
+}
+.nav-tabs-right > li {
+  margin-bottom: 0;
+  margin-left: -1px;
+  float: none;
+}
+.nav-tabs-right > li > a {
+  border-radius: 0 4px 4px 0;
+  margin-left: 0;
+  margin-bottom: 2px;
+}
+.nav-tabs-right > li > a:hover,
+.nav-tabs-right > li > a:focus,
+.nav-tabs-right > li.active > a,
+.nav-tabs-right > li.active > a:hover,
+.nav-tabs-right > li.active > a:focus {
+  border: 1px solid #dddddd;
+  border-left-color: transparent;
+}
+.row > .nav-tabs-right {
+  padding-left: 0;
+  padding-right: 15px;
+}
+.btn-file {
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+}
+.btn-file > input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  font-size: 23px;
+  height: 100%;
+  width: 100%;
+  direction: ltr;
+  cursor: pointer;
+}
+.fileinput {
+  margin-bottom: 9px;
+  display: block;
+}
+.fileinput .form-control {
+  padding-top: 7px;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin-bottom: 0px;
+  vertical-align: middle;
+  cursor: text;
+}
+.fileinput .thumbnail {
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  text-align: center;
+}
+.fileinput .thumbnail > img {
+  max-height: 100%;
+}
+.fileinput .btn {
+  vertical-align: middle;
+}
+.fileinput-exists .fileinput-new,
+.fileinput-new .fileinput-exists {
+  display: none;
+}
+.fileinput-inline .fileinput-controls {
+  display: inline;
+}
+.fileinput-filename {
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden;
+}
+.form-control .fileinput-filename {
+  vertical-align: bottom;
+}
+.fileinput.input-group {
+  display: table;
+}
+.fileinput.input-group > * {
+  position: relative;
+  z-index: 2;
+}
+.fileinput.input-group > .btn-file {
+  z-index: 1;
+}
+.fileinput-new.input-group .btn-file,
+.fileinput-new .input-group .btn-file {
+  border-radius: 0 4px 4px 0;
+}
+.fileinput-new.input-group .btn-file.btn-xs,
+.fileinput-new .input-group .btn-file.btn-xs,
+.fileinput-new.input-group .btn-file.btn-sm,
+.fileinput-new .input-group .btn-file.btn-sm {
+  border-radius: 0 3px 3px 0;
+}
+.fileinput-new.input-group .btn-file.btn-lg,
+.fileinput-new .input-group .btn-file.btn-lg {
+  border-radius: 0 6px 6px 0;
+}
+.form-group.has-warning .fileinput .fileinput-preview {
+  color: #8a6d3b;
+}
+.form-group.has-warning .fileinput .thumbnail {
+  border-color: #faebcc;
+}
+.form-group.has-error .fileinput .fileinput-preview {
+  color: #a94442;
+}
+.form-group.has-error .fileinput .thumbnail {
+  border-color: #ebccd1;
+}
+.form-group.has-success .fileinput .fileinput-preview {
+  color: #3c763d;
+}
+.form-group.has-success .fileinput .thumbnail {
+  border-color: #d6e9c6;
+}
+.input-group-addon:not(:first-child) {
+  border-left: 0;
+}
+

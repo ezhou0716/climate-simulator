@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+<!-- THE ABOVE 3 META TAGS *MUST* COME FIRST IN THE HEAD -->
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- ADD FAVICONS -->
+<title>Science Fair 2023</title>
+<!-- CORE CSS -->
+<link rel="stylesheet" href="global/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="global/css/bootstrap-plugin.css"/>
+<link rel="stylesheet" href="global/css/platform.css"/>
+<link rel="stylesheet" href="global/css/icomoon.css"/>
+<link rel="stylesheet" href="global/plugins/ion.rangeSlider/css/ion.rangeSlider.css"/>
+<link rel="stylesheet" href="global/plugins/ion.rangeSlider/css/ion.rangeSlider.skinHTML5.css"/>
+<link rel="stylesheet" href="global/plugins/bootstrap-select/css/bootstrap-select.min.css"/>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="global/js/html5shiv.min.js"></script>
+      <script src="global/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+.PContent {padding:15px} /* IGNORE THIS, IT'S JUST FOR UI KIT PURPOSES */
+
+.range-slider {
+    position: relative;
+    height: 80px;
+	padding: 20px;
+}
+
+#fillgauge5 {
+	margin-left: -15px;
+}
+
+.control-label {
+	font-weight: 800;
+    font-size: initial;
+}}
+
+</style>
+<body>
+<div class="wrapper clearfix">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div class="navbar-brand">
+		   <img src="global/img/newlogo.png" alt="" style="float: left">
+		  <div style="text-align: center;padding-top: 15px;color: #323232; font-weight: 600;font-family: cursive;">SF2023</div>
+		</div>
+      </div>
+      <div id="navbar">
+        <ul class="nav navbar-nav">
+          <li class="left-nav-toggle"><a href="#"><i class="icon-menu"></i></a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <h1 style="color: #3232f8; font-weight: 600; font-family: cursive; padding-left: 50px;">Do Not Drop The Hot Potato: Take Control with our Simulator</h1>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden-xs"><span class="navbar-avatar"><i class="icon-user-profile"></i></span>
+            <p class="navbar-text">Welcome <a class="toggle-menu menu-right hidden-sm hidden-md"><i class="icon-cog"></i></a> </p>
+          </li>
+          <li class="logout"><a href="" class="log-out"><i class="icon-power"></i></a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- NEW CONFIG EDITOR PANEL -->
+  <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="config">
+    <div class="config-swatch-wrap">
+      <div id="editpage">
+        <p>Configuration options render here...</p>
+      </div>
+    </div>
+  </nav>
+  <!-- NEW PLATFORM SIDE NAVIGATION -->
+  <aside class="navigation">
+    <nav>
+      <ul class="nav platform-nav" id="accordion" aria-multiselectable="true">
+        <li> <a href="SF2023-Home.htm"> Home </a> </li>
+        <li> <a href="SF2023.htm"> Simulator </a> </li>
+        <li> <a href="SF2023-About.htm"> About us </a> </li>
+      </ul>
+    </nav>
+  </aside>
+  <!-- MAIN CONTENT -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="portlet">
+            <div class="PContentBorder"> 
+              <!-- DEVELOPERS; COPY THE BELOW DASHBOARD DIV AND IT'S CONTENTS INTO PORTLET -->
+              <div class="PContent">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="chart-wrapper">
+                      <div class="chart-inner">
+                        <div id="container-1">
+						</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                        <div id="container-2">
+						</div>
+                  </div>
+                  <div class="col-sm-2">
+                        <div id="container-3">
+						<div style="
+							font-family: &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;
+							font-size: 16px;
+							font-weight: bold;
+							line-height: 1.42857143;
+							color: #3390DF;
+							text-align: center;
+							padding-top: 20px;
+							padding-bottom: 20px;
+							padding-right: 30px;
+							padding-left: 30px;
+							}">
+							Temperature Increase by 2100
+						</div>
+						<div style="
+							font-family: &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;
+							font-size: 40px;
+							line-height: 1.42857143;
+							color: #c22;
+							text-align: center;
+							padding-top: 20px;
+							padding-bottom: 20px;
+							padding-right: 30px;
+							padding-left: 30px;
+							}" >
+							<span id="tempgauge"></span>
+							<span>ºC</span>
+						</div>
+						
+						<div style="
+							font-family: &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;
+							font-size: 16px;
+							font-weight: bold;
+							line-height: 1.42857143;
+							color: #3390DF;
+							text-align: center;
+							padding-top: 20px;
+							padding-bottom: 20px;
+							padding-right: 30px;
+							padding-left: 30px;
+							}">
+							Future Sea Level Rise (m)
+						</div>
+					<div class="gauge">
+						<svg id="fillgauge5" height="150"></svg>
+					</div>
+						</div>
+                  </div>
+                </div>
+				<div class="row">
+                    <h4 style="margin-bottom:20px;padding:20px;border-top:1px solid #ddd;">Adjust the simulation by changing the following parameters:</h4>
+                </div>
+                <div class="row">
+				  <div class="form-line col-md-6 col-lg-6">
+					<div class="form-group">
+					  <label class="col-md-4 control-label">Scenario: </label>
+					  <div class="col-md-8">
+						<select class="selectpicker show-tick form-control" title="Select...">
+						  <option value="A1G_MINICAM">Rapid CO2 emission growth peaks in 2080</option>
+						  <option value="A2_ASF">Relatively rapid CO2 emission growth</option>
+						  <option value="B2C_Maria" selected>Business as usual</option>
+						  <option value="B1_IMAGE">CO2 emisson peaks in 2040</option>
+						  <option value="B1T_MESSAGE">Immediate decrease in CO2 emission</option>
+						  <option value="CUSTOM">Custom</option>
+						</select>
+						<!-- DON'T COPY: THIS HELP BLOCK ONLY FOR NOTES -->
+						<p class="help-block">Select an scenario to simulate future climate change.</p>
+						<!-- /END OF HELP BLOCK --> 
+					  </div>
+					</div>
+				  </div>
+                </div>
+				
+                <div class="row" style="padding-top:20px;">
+				  <div class="form-line col-md-6 col-lg-6">
+					<div class="form-group">
+					  <label class="col-md-4 control-label">Fossil Fuel Replacement Rate: </label>
+					  <div class="col-md-8">
+						<input type="text" class="js-range-slider" value="" />
+						<!-- DON'T COPY: THIS HELP BLOCK ONLY FOR NOTES -->
+						<p class="help-block">Select a fossile fuel percentile year over year replacement rate.</p>
+						<!-- /END OF HELP BLOCK --> 
+					  </div>
+					</div>
+				  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- CORE JAVASCRIPT --> 
+<script src="global/js/modernizr.js"></script> 
+<script src="global/js/jquery.min.js"></script> 
+<script src="global/js/jquery.migrate.js"></script> 
+<script src="global/js/bootstrap.min.js"></script> 
+<script src="global/js/bootstrap-plugin.js"></script> 
+<script src="global/js/screenfull.min.js"></script> 
+<script src="global/js/retina.min.js"></script> 
+<script src="global/js/jPushMenu.js"></script> 
+<script src="global/js/ie10_viewport_workaround.js"></script> 
+<script src="global/js/CO2DT.js"></script> 
+<!-- DASHBOARDS --> 
+<script src="global/plugins/amcharts/core.js"></script>
+<script src="global/plugins/amcharts/charts.js"></script>
+<script src="global/plugins/amcharts/themes/animated.js"></script>
+<script src="global/plugins/amcharts/maps.js"></script>
+<script src="global/plugins/amcharts/geodata/worldLow.js"></script>
+<script src="global/plugins/amcharts/plugins/timeline.js"></script>
+<script src="global/plugins/amcharts/plugins/bullets.js"></script>
+
+<script src="global/plugins/d3/d3.v3.min.js"></script>
+<script src="global/plugins/d3/liquidFillGauge.js"></script>
+<script src="global/plugins/ion.rangeSlider/js/ion.rangeSlider.min.js"></script> 
+<script src="global/plugins/bootstrap-select/js/bootstrap-select.min.js"></script> 
+
+<script>
+am4core.addLicense("CH246081450");
+am4core.addLicense("MP246081450");
+am4core.addLicense("TL246081450");
+
+var chart1, chart2;
+var trend1, trend2, trend3;
+
+var polygonSeries;
+let animation;
+
+var gauge5;
+var slider1;
+
+
+function createTrendLine2(data) {
+  trend2 = chart1.series.push(new am4charts.LineSeries());
+  trend2.dataFields.valueY = "gmt";
+  trend2.dataFields.dateX = "year";
+  trend2.strokeWidth = 2
+  trend2.stroke = trend2.fill = am4core.color("#999");
+  trend2.name = "Business as usual";
+  trend2.data = data;
+
+  var bullet2 = trend2.bullets.push(new am4charts.CircleBullet());
+  bullet2.tooltipText = "{date}\n[bold font-size: 17px]Business as usual: {valueY}[/]";
+  bullet2.strokeWidth = 2;
+  bullet2.stroke = am4core.color("#fff")
+  bullet2.circle.fill = trend2.stroke;
+
+  var hoverState2 = bullet2.states.create("hover");
+  hoverState2.properties.scale = 1.7;
+
+  return trend2;
+};
+
+
+function createTrendLine3(data) {
+  trend3 = chart1.series.push(new am4charts.LineSeries());
+  trend3.dataFields.valueY = "gmt";
+  trend3.dataFields.dateX = "year";
+  trend3.strokeWidth = 2
+  trend3.stroke = trend3.fill = am4core.color("#22c");
+  trend3.name = "Future Temperature Change";
+  trend3.data = data;
+
+  var bullet3 = trend3.bullets.push(new am4charts.CircleBullet());
+  bullet3.tooltipText = "{date}\n[bold font-size: 17px]Future Temperature Change: {valueY}[/]";
+  bullet3.strokeWidth = 2;
+  bullet3.stroke = am4core.color("#fff")
+  bullet3.circle.fill = trend3.stroke;
+
+  var hoverState3 = bullet3.states.create("hover");
+  hoverState3.properties.scale = 1.7;
+
+  return trend3;
+};
+
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// ==== chart1: lineChart
+// Create chart instance
+chart1 = am4core.create("container-1", am4charts.XYChart);
+
+var title1 = chart1.titles.create();
+title1.text = "Temperature Change Comparing with Pre-industrial Level";
+title1.fontSize = 20;
+//title2.marginTop = 10;
+
+// Enable chart cursor
+chart1.cursor = new am4charts.XYCursor();
+chart1.cursor.lineX.disabled = true;
+chart1.cursor.lineY.disabled = true;
+
+// Enable scrollbar
+chart1.scrollbarX = new am4core.Scrollbar();
+
+chart1.data = [{
+      "year": "1958",
+      "gmt": 0.06 + TADJUST
+  }, {
+      "year": "1959",
+      "gmt": 0.03 + TADJUST
+  }, {
+      "year": "1960",
+      "gmt": -0.03 + TADJUST
+  }, {
+      "year": "1961",
+      "gmt": 0.06 + TADJUST
+  }, {
+      "year": "1962",
+      "gmt": 0.03 + TADJUST
+  }, {
+      "year": "1964",
+      "gmt": -0.2 + TADJUST
+  }, {
+      "year": "1965",
+      "gmt": -0.11 + TADJUST
+  }, {
+      "year": "1966",
+      "gmt": -0.06 + TADJUST
+  }, {
+      "year": "1967",
+      "gmt": -0.02 + TADJUST
+  }, {
+      "year": "1968",
+      "gmt": -0.08 + TADJUST
+  }, {
+      "year": "1969",
+      "gmt": 0.05 + TADJUST
+  }, {
+      "year": "1970",
+      "gmt": 0.03 + TADJUST
+  }, {
+      "year": "1971",
+      "gmt": -0.08 + TADJUST
+  }, {
+      "year": "1972",
+      "gmt": 0.01 + TADJUST
+  }, {
+      "year": "1973",
+      "gmt": 0.16 + TADJUST
+  }, {
+      "year": "1974",
+      "gmt": -0.07 + TADJUST
+  }, {
+      "year": "1975",
+      "gmt": -0.01 + TADJUST
+  }, {
+      "year": "1976",
+      "gmt": -0.1 + TADJUST
+  }, {
+      "year": "1977",
+      "gmt": 0.18 + TADJUST
+  }, {
+      "year": "1978",
+      "gmt": 0.07 + TADJUST
+  }, {
+      "year": "1979",
+      "gmt": 0.16 + TADJUST
+  }, {
+      "year": "1980",
+      "gmt": 0.26 + TADJUST
+  }, {
+      "year": "1981",
+      "gmt": 0.32 + TADJUST
+  }, {
+      "year": "1982",
+      "gmt": 0.14 + TADJUST
+  }, {
+      "year": "1983",
+      "gmt": 0.31 + TADJUST
+  }, {
+      "year": "1984",
+      "gmt": 0.16 + TADJUST
+  }, {
+      "year": "1985",
+      "gmt": 0.12 + TADJUST
+  }, {
+      "year": "1986",
+      "gmt": 0.18 + TADJUST
+  }, {
+      "year": "1987",
+      "gmt": 0.32 + TADJUST
+  }, {
+      "year": "1988",
+      "gmt": 0.39 + TADJUST
+  }, {
+      "year": "1989",
+      "gmt": 0.27 + TADJUST
+  }, {
+      "year": "1990",
+      "gmt": 0.45 + TADJUST
+  }, {
+      "year": "1991",
+      "gmt": 0.4 + TADJUST
+  }, {
+      "year": "1992",
+      "gmt": 0.22 + TADJUST
+  }, {
+      "year": "1993",
+      "gmt": 0.23 + TADJUST
+  }, {
+      "year": "1994",
+      "gmt": 0.32 + TADJUST
+  }, {
+      "year": "1995",
+      "gmt": 0.45 + TADJUST
+  }, {
+      "year": "1996",
+      "gmt": 0.33 + TADJUST
+  }, {
+      "year": "1997",
+      "gmt": 0.46 + TADJUST
+  }, {
+      "year": "1998",
+      "gmt": 0.61 + TADJUST
+  }, {
+      "year": "1999",
+      "gmt": 0.38 + TADJUST
+  }, {
+      "year": "2000",
+      "gmt": 0.39 + TADJUST
+  }, {
+      "year": "2001",
+      "gmt": 0.53 + TADJUST
+  }, {
+      "year": "2002",
+      "gmt": 0.63 + TADJUST
+  }, {
+      "year": "2003",
+      "gmt": 0.62 + TADJUST
+  }, {
+      "year": "2004",
+      "gmt": 0.53 + TADJUST
+  }, {
+      "year": "2005",
+      "gmt": 0.67 + TADJUST
+  }, {
+      "year": "2006",
+      "gmt": 0.63 + TADJUST
+  }, {
+      "year": "2007",
+      "gmt": 0.66 + TADJUST
+  }, {
+      "year": "2008",
+      "gmt": 0.54 + TADJUST
+  }, {
+      "year": "2009",
+      "gmt": 0.65 + TADJUST
+  }, {
+      "year": "2010",
+      "gmt": 0.72 + TADJUST
+  }, {
+      "year": "2011",
+      "gmt": 0.61 + TADJUST
+  }, {
+      "year": "2012",
+      "gmt": 0.65 + TADJUST
+  }, {
+      "year": "2013",
+      "gmt": 0.67 + TADJUST
+  }, {
+      "year": "2014",
+      "gmt": 0.74 + TADJUST
+  }, {
+      "year": "2015",
+      "gmt": 0.89 + TADJUST
+  }, {
+      "year": "2016",
+      "gmt": 1.01 + TADJUST
+  }, {
+      "year": "2017",
+      "gmt": 0.92 + TADJUST
+  }, {
+      "year": "2018",
+      "gmt": 0.84 + TADJUST
+  }, {
+      "year": "2019",
+      "gmt": 0.97 + TADJUST
+  }, {
+      "year": "2020",
+      "gmt": 1.02 + TADJUST
+  }, {
+      "year": "2021",
+      "gmt": 0.84 + TADJUST
+  }];
+
+// The most recent UK Met Office analysis indicates 2016 was "around 1.1C" above this 1850-1900 baseline.
+// So comparing to 1959-1980 mean, there is about 0.09 degree difference.
+  
+// Create axes
+var dateAxis1 = chart1.xAxes.push(new am4charts.DateAxis());
+dateAxis1.renderer.grid.template.location = 0.5;
+dateAxis1.dateFormatter.inputDateFormat = "yyyy";
+dateAxis1.renderer.minGridDistance = 40;
+dateAxis1.tooltipDateFormat = "yyyy";
+//dateAxis1.dateFormats.setKey("day", "dd");
+dateAxis1.title.text="Year";
+
+var valueAxis1 = chart1.yAxes.push(new am4charts.ValueAxis());
+valueAxis1.title.text="Temperature Change(℃)";
+valueAxis1.min=-1;
+valueAxis1.max=6;
+
+function createSeries1(field, name) {
+  // Set up series
+  var series1 = chart1.series.push(new am4charts.LineSeries());
+  series1.name = name;
+  series1.dataFields.valueY = field;
+  series1.dataFields.dateX = "year";
+
+  series1.tooltipText = "\n[bold font-size: 17px]{name}: {valueY}[/]";
+//  series1.strokeDasharray = 3;
+  series1.strokeWidth = 2
+  series1.strokeOpacity = 0.3;
+//  series1.strokeDasharray = "3,3"
+
+  var bullet1 = series1.bullets.push(new am4charts.CircleBullet());
+  bullet1.strokeWidth = 2;
+  bullet1.stroke = am4core.color("#fff");
+  bullet1.setStateOnChildren = true;
+  bullet1.propertyFields.fillOpacity = "opacity";
+  bullet1.propertyFields.strokeOpacity = "opacity";
+
+  var hoverState1 = bullet1.states.create("hover");
+  hoverState1.properties.scale = 1.7;
+  
+  return series1;
+}
+
+createSeries1("gmt", "Temperature Change");
+
+
+function createTrendLine(data) {
+  trend1 = chart1.series.push(new am4charts.LineSeries());
+  trend1.dataFields.valueY = "gmt";
+  trend1.dataFields.dateX = "year";
+  trend1.strokeWidth = 2
+  trend1.stroke = trend1.fill = am4core.color("#c22");
+  trend1.name = "Future Temperature Change";
+  trend1.data = data;
+
+  var bullet1 = trend1.bullets.push(new am4charts.CircleBullet());
+  bullet1.tooltipText = "{date}\n[bold font-size: 17px]Future Temperature Change: {valueY}[/]";
+  bullet1.strokeWidth = 2;
+  bullet1.stroke = am4core.color("#fff")
+  bullet1.circle.fill = trend1.stroke;
+
+  var hoverState1 = bullet1.states.create("hover");
+  hoverState1.properties.scale = 1.7;
+
+  return trend1;
+};
+
+
+function createProjectLine(name, data) {
+  var proj1 = chart1.series.push(new am4charts.LineSeries());
+  proj1.dataFields.valueY = "gmt";
+  proj1.dataFields.dateX = "year";
+  proj1.name = name;
+
+  proj1.strokeDasharray = 3;
+  proj1.strokeWidth = 4
+  proj1.strokeOpacity = 0.3;
+  proj1.strokeDasharray = "3,3"
+  
+  proj1.stroke = proj1.fill = am4core.color("#00D");
+  proj1.data = data;
+
+/*
+  var bullet1 = trend1.bullets.push(new am4charts.CircleBullet());
+  bullet1.tooltipText = "{date}\n[bold font-size: 17px]value: {valueY}[/]";
+  bullet1.strokeWidth = 2;
+  bullet1.stroke = am4core.color("#fff")
+  bullet1.circle.fill = trend1.stroke;
+
+  var hoverState1 = bullet1.states.create("hover");
+  hoverState1.properties.scale = 1.7;
+*/
+  return proj1;
+};
+
+
+createProjectLine("2 ºC", [
+  { "year": "1959", "gmt": 2 },
+  { "year": "2100", "gmt": 2 }
+]);
+
+createProjectLine("1.5 ºC", [
+  { "year": "1959", "gmt": 1.5 },
+  { "year": "2100", "gmt": 1.5 }
+])
+
+
+var futureData = CO2DTFuture("B2C_Maria");
+createTrendLine(futureData);
+
+// ==== chart2: XYChart
+// 71 - 0
+// 247 - 3
+var rc = futureData[futureData.length-1]["gmt"] * (247-71)/5.4 + 71;
+var newcolor = "#" + Math.round(rc).toString(16) + "c78a";
+chart2 = createChart2(am4core.color(newcolor));
+
+//chart2 = createChart2(am4core.color("#47c78a"));
+
+	// ==== chart 3
+	var config4 = liquidFillGaugeDefaultSettings();
+	config4.circleThickness = 0.1;
+	config4.circleColor = "#3390DF";
+	config4.textColor = "#c22";
+	config4.waveTextColor = "#1D7FD3";
+	config4.waveColor = "#1D7FD3";
+	config4.textVertPosition = 0.8;
+	config4.waveAnimateTime = 1000;
+	config4.waveHeight = 0.05;
+	config4.waveAnimate = true;
+	config4.waveRise = false;
+	config4.waveHeightScaling = false;
+	config4.waveOffset = 0.25;
+	config4.textSize = 1;
+	config4.waveCount = 3;
+	config4.minValue = 0;
+	config4.maxValue = 20;
+	config4.displayPercent = false;
+
+	var level = futureData[futureData.length-1]["gmt"] * 2.3;
+	//gauge5.update(target);
+
+	$("#tempgauge").text(futureData[futureData.length-1]["gmt"]);
+	
+	gauge5 = loadLiquidFillGauge("fillgauge5", level, config4);
+
+}); // end am4core.ready()
+
+function createChart2(color) {
+	chart2x = am4core.create("container-2", am4maps.MapChart);
+
+	var title2 = chart2x.titles.create();
+	title2.text = "Climate Change";
+	title2.fontSize = 20;
+	//title2.fontWeight = "bold";
+	title2.align = "left";
+	title2.stroke = am4core.color("#47c78a");
+	//title2.marginBottom = 20;
+
+	chart2x.geodata = am4geodata_worldLow;
+
+	// Set projection
+	chart2x.projection = new am4maps.projections.Orthographic();
+	chart2x.panBehavior = "rotateLongLat";
+	chart2x.deltaLatitude = -20;
+	chart2x.padding(20,20,20,20);
+
+	// limits vertical rotation
+	chart2x.adapter.add("deltaLatitude", function(delatLatitude){
+		return am4core.math.fitToRange(delatLatitude, -90, 90);
+	})
+
+	// Create map polygon series
+	var polygonSeries = chart2x.series.push(new am4maps.MapPolygonSeries());
+
+	// Make map load polygon (like country names) data from GeoJSON
+	polygonSeries.useGeodata = true;
+
+	// Configure series
+	var polygonTemplate = polygonSeries.mapPolygons.template;
+	polygonTemplate.tooltipText = "{name}";
+	polygonTemplate.fill = color; //am4core.color("#47c78a");
+	polygonTemplate.stroke = am4core.color("#454a58");
+	polygonTemplate.strokeWidth = 0.5;
+
+	var graticuleSeries = chart2x.series.push(new am4maps.GraticuleSeries());
+	graticuleSeries.mapLines.template.line.stroke = am4core.color("#ffffff");
+	graticuleSeries.mapLines.template.line.strokeOpacity = 0.08;
+	graticuleSeries.fitExtent = false;
+
+
+	chart2x.backgroundSeries.mapPolygons.template.polygon.fillOpacity = 0.1;
+	chart2x.backgroundSeries.mapPolygons.template.polygon.fill = am4core.color("#5f5ffe");
+
+	// Create hover state and set alternative fill color
+	var hs = polygonTemplate.states.create("hover");
+	hs.properties.fill = chart2x.colors.getIndex(0).brighten(-0.5);
+
+	setTimeout(function(){
+	  animation = chart2x.animate({property:"deltaLongitude", to:100000}, 20000000);
+	}, 3000)
+
+	chart2x.seriesContainer.events.on("down", function(){
+	if(animation){
+	  animation.stop();
+	}
+	})
+	
+	return chart2x;
+}
+
+function redraw(futureData, futureData2, futureData3) {
+	if (chart1) {
+		trend1.data = futureData;
+		
+		if (trend2 && futureData2) {
+			trend2.data=futureData2;
+		}
+		else if (!trend2 && futureData2) {
+			createTrendLine2(futureData2);
+		}
+
+		if (trend3 && futureData3) {
+			trend3.data=futureData3;
+		} 
+		else if (!trend3 && futureData3) {
+			createTrendLine3(futureData3);
+		}
+
+		chart1.invalidateRawData();
+	}
+
+   if (chart2) {
+		chart2.dispose();
+		
+		// 71 - 0
+		// 247 - 3
+//		var rc = futureData[futureData.length-1]["gmt"] * (247-71)/3.0 + 71;
+		var rc = futureData[futureData.length-1]["gmt"] * (247-71)/5.4 + 71;
+		var newcolor = "#" + Math.round(rc).toString(16) + "c78a";
+		chart2 = createChart2(am4core.color(newcolor));
+   }
+
+   if (gauge5) {
+		// TODO: recalculate projection based on adjusted parameter
+   
+		// just to show the visual effect, but we need a data model behind this.
+		$("#tempgauge").text(futureData[futureData.length-1]["gmt"]);
+		
+		var target = futureData[futureData.length-1]["gmt"] * 2.3;
+		gauge5.update(target);
+   }
+}
+
+$(document).ready(function() {
+    'use strict';
+
+
+	$('.selectpicker').on('changed.bs.select', function (e, clickedIndex, newValue, oldValue) {
+		var selected = $(e.currentTarget).val();
+		
+		var futureData;
+		var futureData2;
+		var futureData3;
+		
+		if (selected === "CUSTOM") {
+			// TODO: enable custom controls and calculate futureData using the custom model
+			
+			if (slider1) {
+				slider1.update({disable: false});
+			}
+			
+			// placeholder: FIXME
+			futureData = CO2DTCustom("B2C_Maria", slider1.input.value / 100.0);
+			futureData2 = CO2DTFuture("B2C_Maria");
+			//futureData = CO2DTCustom("BAU_LIN", slider1.input.value / 100.0);
+			//futureData2 = CO2DTCustom("BAU_POLY", slider1.input.value / 100.0);
+			//futureData3 = CO2DTCustom("BAU_EXP", slider1.input.value / 100.0);
+
+		}
+		else {
+			// disable custom custols
+			if (slider1) {
+				slider1.update({disable: true});
+			}
+			futureData2 = null;
+
+			if (trend2)
+				trend2.data = null;
+
+			futureData = CO2DTFuture(selected);
+		}
+		
+		redraw(futureData, futureData2, futureData3);
+	});
+
+//$(function () {
+	var $range = $(".js-range-slider"),
+		instance,
+		min = 0,
+		max = 20;
+
+	slider1 = $(".js-range-slider").ionRangeSlider({
+		skin: "big",
+		type: "single",
+		min: min,
+		max: max,
+		from: 0,
+		step: 0.1,
+		disable: true,
+		onStart: function(data) {
+		},
+		onFinish: function(data) {
+			
+	       var newValue =  data.from;
+		   
+		   // TBD: depends on the parameter and mode, we should adjust the chart accordingly.
+		   var futureData = CO2DTCustom("B2C_Maria", slider1.input.value / 100.0);
+		   //var futureData = CO2DTCustom("BAU_LIN", newValue / 100.0);
+		   //var futureData2 = CO2DTCustom("BAU_POLY", newValue / 100.0);
+		   //var futureData3 = CO2DTCustom("BAU_EXP", newValue / 100.0);
+		   
+		   redraw(futureData);
+		   
+		}
+	}).data("ionRangeSlider");
+
+});
+		
+		
+//////////////////////////////////////// END OF CHARTS
+
+// HANDLE SIDEBAR MENU COLLAPSE/EXPAND. REFLOW ANY CHARTS THAT MAY EXIST AND SET COOKIE TO REMEMBER NAVIGATION PREFERENCE.
+if ($('.left-nav-toggle a')) {
+    $('.left-nav-toggle a').on('click', function(event) {
+        event.preventDefault();
+        $("body").toggleClass("nav-toggle");
+        // USE "setInterval" TO REFLOW CHART AFTER CLICK FUNCTION.
+        // CHECK IF CURRENT VIEWPORT IS XS AND REMOVE COOKIE SO NAVIGATION UX WORKS AS INTENDED ON MOBILE
+        if ($("span.navbar-avatar").is(":visible")) {
+            if ($('body').hasClass("nav-toggle")) {
+                $.cookie("nav-toggle", "close", {
+                    path: "/portal/ui"
+                });
+            } else {
+                $.cookie("nav-toggle", "open", {
+                    path: "/portal/ui"
+                });
+            }
+        } else {
+            $.removeCookie("nav-toggle", {
+                path: "/portal/ui"
+            });
+        }
+    });
+}
+
+// HIDE ALL OPEN SUB NAV MENU ITEMS
+if ($('.nav-second')) {
+    $('.nav-second').on('show.bs.collapse', function() {
+        $('.nav-second.in').collapse('hide');
+    });
+}
+// FULLSCREEN
+if ($('#request-fullscreen')) {
+    $('#request-fullscreen').click(function() {
+        screenfull.toggle($('#container')[0]);
+    });
+}
+//NEW PUSH PANEL FOR CONFIG EDITOR
+if ($('.toggle-menu')) {
+    $('.toggle-menu').jPushMenu();
+}
+</script>
+</body>
+</html>

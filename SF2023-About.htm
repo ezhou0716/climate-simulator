@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+<!-- THE ABOVE 3 META TAGS *MUST* COME FIRST IN THE HEAD -->
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- ADD FAVICONS -->
+<title>Science Fair 2023</title>
+<!-- CORE CSS -->
+<link rel="stylesheet" href="global/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="global/css/bootstrap-plugin.css"/>
+<link rel="stylesheet" href="global/css/platform.css"/>
+<link rel="stylesheet" href="global/css/icomoon.css"/>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="global/js/html5shiv.min.js"></script>
+      <script src="global/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+.PContent {padding:15px} /* IGNORE THIS, IT'S JUST FOR UI KIT PURPOSES */
+</style>
+<body>
+<div class="wrapper clearfix">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div class="navbar-brand">
+		   <img src="global/img/newlogo.png" alt="" style="float: left">
+		  <div style="text-align: center;padding-top: 15px;color: #323232; font-weight: 600;font-family: cursive;">SF2023</div>
+		</div>
+      </div>
+      <div id="navbar">
+        <ul class="nav navbar-nav">
+          <li class="left-nav-toggle"><a href="#"><i class="icon-menu"></i></a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <h1 style="color: #3232f8; font-weight: 600; font-family: cursive; padding-left: 50px;">Do Not Drop The Hot Potato: Take Control with our Simulator</h1>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden-xs"><span class="navbar-avatar"><i class="icon-user-profile"></i></span>
+            <p class="navbar-text">Welcome <a class="toggle-menu menu-right hidden-sm hidden-md"><i class="icon-cog"></i></a> </p>
+          </li>
+          <li class="logout"><a href="" class="log-out"><i class="icon-power"></i></a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- NEW CONFIG EDITOR PANEL -->
+  <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="config">
+    <div class="config-swatch-wrap">
+      <div id="editpage">
+        <p>Configuration options render here...</p>
+      </div>
+    </div>
+  </nav>
+  <!-- NEW PLATFORM SIDE NAVIGATION -->
+  <aside class="navigation">
+    <nav>
+      <ul class="nav platform-nav" id="accordion" aria-multiselectable="true">
+        <li> <a href="SF2023-Home.htm"> Home </a> </li>
+        <li> <a href="SF2023.htm"> Simulator </a> </li>
+        <li> <a href="SF2023-About.htm"> About us </a> </li>
+      </ul>
+    </nav>
+  </aside>
+  <!-- MAIN CONTENT -->
+  <section class="content">
+    <div class="container-fluid">
+        <div class="col-md-12">
+          <div class="portlet">
+            <div class="PContentBorder"> 
+              <!-- DEVELOPERS; COPY THE BELOW DASHBOARD DIV AND IT'S CONTENTS INTO PORTLET -->
+              <div class="PContent">
+				<h1 style="font-weight: bold;font-family: monospace;text-align: center;">About us, Ethan, Isaac, Yonathan</h1>
+                <div style="font-size: 21px;">
+				  <br>
+				  Ethan Zhou is a 15-year-old sophomore at The Bromfield School. He enjoys science and math and has partaken in various activities in the field of stem including summer camps like GEMs and USNA. He also has competed in many competitions including ACSL and USACO, in which he is now silver. Ethan values friendship and the well-being of himself and others. He enjoys designing, playing his clarinet, and going to this gym in his free time. 
+				  <br>
+				  Isaac is 16 years old and attends The Bromfield School in Harvard, MA. He enjoys music, competitive swimming, eating food, learning science-related things, and all things baseball. Isaac also works as a part time lifeguard and aspires to play baseball in college at a top-tie academic school as a Right-Handed Pitcher. He is also an avid baseball card collector and gym enthusiast who only does leg day.
+				  <br>
+				  Yonathan is an avid programmer and problem solver that is never shy to take on a problem. HIs goal is to someday own a company and uplift his community in Ethiopia through financial means. In the past, Yonathan had participated in numerous competitions such as the American Computer Scince League and previous WSERF in 2021. Yonathan also enjoys to play basketball and soccer in his free time. He is motiviated by his love of stem and his love for achievement.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+</div>
+<!-- CORE JAVASCRIPT --> 
+<script src="global/js/modernizr.js"></script> 
+<script src="global/js/jquery.min.js"></script> 
+<script src="global/js/jquery.migrate.js"></script> 
+<script src="global/js/bootstrap.min.js"></script> 
+<script src="global/js/bootstrap-plugin.js"></script> 
+<script src="global/js/screenfull.min.js"></script> 
+<script src="global/js/retina.min.js"></script> 
+<script src="global/js/jPushMenu.js"></script> 
+<script src="global/js/ie10_viewport_workaround.js"></script> 
+<!-- DASHBOARDS --> 
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/plugins/timeline.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/plugins/bullets.js"></script>
+
+<script>
+// HANDLE SIDEBAR MENU COLLAPSE/EXPAND. REFLOW ANY CHARTS THAT MAY EXIST AND SET COOKIE TO REMEMBER NAVIGATION PREFERENCE.
+if ($('.left-nav-toggle a')) {
+    $('.left-nav-toggle a').on('click', function(event) {
+        event.preventDefault();
+        $("body").toggleClass("nav-toggle");
+        // USE "setInterval" TO REFLOW CHART AFTER CLICK FUNCTION.
+        // CHECK IF CURRENT VIEWPORT IS XS AND REMOVE COOKIE SO NAVIGATION UX WORKS AS INTENDED ON MOBILE
+        if ($("span.navbar-avatar").is(":visible")) {
+            if ($('body').hasClass("nav-toggle")) {
+                $.cookie("nav-toggle", "close", {
+                    path: "/portal/ui"
+                });
+            } else {
+                $.cookie("nav-toggle", "open", {
+                    path: "/portal/ui"
+                });
+            }
+        } else {
+            $.removeCookie("nav-toggle", {
+                path: "/portal/ui"
+            });
+        }
+    });
+}
+
+// HIDE ALL OPEN SUB NAV MENU ITEMS
+if ($('.nav-second')) {
+    $('.nav-second').on('show.bs.collapse', function() {
+        $('.nav-second.in').collapse('hide');
+    });
+}
+// FULLSCREEN
+if ($('#request-fullscreen')) {
+    $('#request-fullscreen').click(function() {
+        screenfull.toggle($('#container')[0]);
+    });
+}
+//NEW PUSH PANEL FOR CONFIG EDITOR
+if ($('.toggle-menu')) {
+    $('.toggle-menu').jPushMenu();
+}
+</script>
+</body>
+</html>
